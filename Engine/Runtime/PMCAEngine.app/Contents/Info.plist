@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>PMCAEngine</string>
+	<key>CFBundleExecutable</key>
+	<string>pmca-engine</string>
+	<key>CFBundleIconFile</key>
+	<string>icon-windowed.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>local.pmca-swift.engine</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>PMCAEngine</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.0.0</string>
+	<key>LSBackgroundOnly</key>
+	<true/>
+	<key>LSMinimumSystemVersion</key>
+	<string>27.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>PMCA Swift needs access to the camera USB storage interface to read and update language settings.</string>
+</dict>
+</plist>

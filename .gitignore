@@ -1,0 +1,17 @@
+
+# Rebuildable engine intermediates
+Engine/.build/
+**/__pycache__/
+*.pyc
+.DS_Store
+Engine/Runtime/pmca-engine/
+
+Engine/.venv/
+
+# Local Xcode state and build products
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+.env
+.env.*
