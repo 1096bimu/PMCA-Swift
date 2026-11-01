@@ -12,7 +12,8 @@ mkdir -p "$TARGET"
 /usr/bin/xattr -dr com.apple.FinderInfo "$TARGET_BUILD_DIR/$WRAPPER_NAME" 2>/dev/null || true
 /usr/bin/xattr -dr com.apple.ResourceFork "$TARGET_BUILD_DIR/$WRAPPER_NAME" 2>/dev/null || true
 # PyInstaller signs the helper and its libraries ad hoc. Re-sign the helper tree
-# with Xcode's identity for signed local builds; the outer app is signed by Xcode.
+# with Xcode's identity and hardened runtime; the outer app is signed by Xcode.
+# All bundled libraries share that identity, keeping library validation enabled.
 if [ "${CODE_SIGNING_ALLOWED:-NO}" = YES ] && [ -n "${EXPANDED_CODE_SIGN_IDENTITY:-}" ]; then
-  /usr/bin/codesign --force --deep --sign "$EXPANDED_CODE_SIGN_IDENTITY" "$TARGET"
+  /usr/bin/codesign --force --deep --options runtime --timestamp --sign "$EXPANDED_CODE_SIGN_IDENTITY" "$TARGET"
 fi

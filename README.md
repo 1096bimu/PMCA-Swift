@@ -136,9 +136,14 @@ oldest macOS you intend to support and update both minimum-OS declarations when
 producing a broader release. Rebuild bundled libraries when dependencies change;
 updating Homebrew alone does not update the app.
 
-The current artifact is signed for local development. Public distribution needs
-Developer ID signing of the helper and app, hardened-runtime validation, and Apple
-notarization; no Developer ID certificate was available for this build.
+Hardened runtime is enabled for the app and the bundled engine. The helper and
+its libraries are signed with the same Xcode identity, retaining library validation
+without runtime exceptions. Release builds omit the debugger entitlement; Debug
+builds retain Xcode debugging support. The helper is timestamped during signing.
+
+Local builds use the configured development team. For distribution outside the
+App Store, archive and export with Developer ID signing, then notarize and staple
+the app. Enabling hardened runtime alone does not notarize the application.
 
 ## Git and Xcode
 
